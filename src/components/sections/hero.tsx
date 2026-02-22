@@ -19,15 +19,15 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
         {/* Title positioned absolutely at the top */}
-        <div className="absolute top-12 md:top-6 left-0 w-full px-4 flex flex-col items-center">
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-white tracking-wide drop-shadow-md">
+        <div className="absolute left-0 w-full px-4 flex flex-col items-center">
+          <h1 className="font-serif text-4xl md:text-6xl font-bold text-white tracking-wide drop-shadow-md">
             CRESCENT MASONIC LODGE NO. 419
           </h1>
         </div>
 
         {/* Lower text block positioned at the bottom */}
         <div className="flex flex-col items-center gap-6 mt-32 md:mt-48">
-          <div className="flex flex-col items-center gap-12 mt-12">
+          <div className="flex flex-col items-center mt-12">
             <h2 className="text-xl md:text-3xl text-white font-serif tracking-wide drop-shadow-md">
               MASONIC DISTRICT R7 - Cebu
             </h2>

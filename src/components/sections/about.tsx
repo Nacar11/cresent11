@@ -143,7 +143,7 @@ export default function AboutSection() {
                     {/* Interchangeable Image */}
                     <div className={`relative transition-all duration-500 bg-sidebar-border/30 border border-border p-1 lg:p-2 shadow-sm flex items-center justify-center overflow-hidden ${activeTab === "about" ? "aspect-[3/2] sm:aspect-[16/10]" : activeTab === "mission" ? "aspect-[3/4]" : "aspect-square"
                         }`}>
-                        <div className="relative w-full h-full bg-primary/10 border border-accent/20 overflow-hidden">
+                        <div className="relative w-full h-full bg-white border border-accent/20 overflow-hidden">
                             <AnimatePresence mode="popLayout" initial={false} custom={direction}>
                                 {activeTab === "about" ? (
                                     <motion.div
@@ -154,7 +154,7 @@ export default function AboutSection() {
                                         animate="center"
                                         exit="exit"
                                         transition={{ duration: 0.8, ease: "easeOut" }}
-                                        className="absolute inset-0 px-12 sm:px-14"
+                                        className="absolute inset-0"
                                     >
                                         <div className="relative w-full h-full shadow-md overflow-hidden bg-background">
                                             <Image
@@ -208,19 +208,19 @@ export default function AboutSection() {
                                 <>
                                     <button
                                         onClick={prevImage}
-                                        className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-10 h-10 border border-[#D4AF37] bg-primary text-[#D4AF37] flex items-center justify-center transition-colors hover:bg-primary/90 duration-300 z-10 shadow-sm"
+                                        className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 p-2 text-[#D4AF37] bg-transparent flex items-center justify-center transition-opacity hover:opacity-70 duration-300 z-10 drop-shadow-md"
                                         aria-label="Previous Image"
                                     >
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter" className="w-8 h-8 sm:w-10 sm:h-10">
                                             <path d="M15 18l-6-6 6-6" />
                                         </svg>
                                     </button>
                                     <button
                                         onClick={nextImage}
-                                        className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-10 h-10 border border-[#D4AF37] bg-primary text-[#D4AF37] flex items-center justify-center transition-colors hover:bg-primary/90 duration-300 z-10 shadow-sm"
+                                        className="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 p-2 text-[#D4AF37] bg-transparent flex items-center justify-center transition-opacity hover:opacity-70 duration-300 z-10 drop-shadow-md"
                                         aria-label="Next Image"
                                     >
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter" className="w-8 h-8 sm:w-10 sm:h-10">
                                             <path d="M9 18l6-6-6-6" />
                                         </svg>
                                     </button>
