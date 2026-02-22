@@ -9,7 +9,7 @@ export default function AboutSection() {
     const [activeTab, setActiveTab] = useState<"about" | "mission" | "history">("about")
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
     const [direction, setDirection] = useState(0)
-    const aboutImages = ["/about-us-1.jpg", "/about-us-2.jpg", "/about-us-3.jpg"]
+    const aboutImages = ["/about-us-1.jpg", "/about-us-2.jpg", "/about-us-3.jpg", "/about-us-4.jpg"]
 
     const nextImage = () => {
         setDirection(1)
@@ -40,8 +40,8 @@ export default function AboutSection() {
 
     return (
         <section id="about" className="py-24 bg-card min-h-screen flex items-center">
-            <div className="container mx-auto px-4 max-w-6xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div className="container mx-auto px-4 max-w-7xl">
+                <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-12 lg:gap-16 items-start">
 
                     {/* Text Content */}
                     <div className="space-y-8">
@@ -141,9 +141,9 @@ export default function AboutSection() {
                     </div>
 
                     {/* Interchangeable Image */}
-                    <div className={`relative transition-all duration-500 bg-sidebar-border/30 border border-border p-4 shadow-sm flex items-center justify-center overflow-hidden ${activeTab === "about" ? "aspect-[3/2]" : activeTab === "mission" ? "aspect-[3/4]" : "aspect-square"
+                    <div className={`relative transition-all duration-500 bg-sidebar-border/30 border border-border p-1 lg:p-2 shadow-sm flex items-center justify-center overflow-hidden ${activeTab === "about" ? "aspect-[3/2] sm:aspect-[16/10]" : activeTab === "mission" ? "aspect-[3/4]" : "aspect-square"
                         }`}>
-                        <div className="relative w-full h-full bg-background border border-accent/20 overflow-hidden">
+                        <div className="relative w-full h-full bg-primary/10 border border-accent/20 overflow-hidden">
                             <AnimatePresence mode="popLayout" initial={false} custom={direction}>
                                 {activeTab === "about" ? (
                                     <motion.div
@@ -154,7 +154,7 @@ export default function AboutSection() {
                                         animate="center"
                                         exit="exit"
                                         transition={{ duration: 0.8, ease: "easeOut" }}
-                                        className="absolute inset-0 px-12 sm:px-16 py-4"
+                                        className="absolute inset-0 px-12 sm:px-14"
                                     >
                                         <div className="relative w-full h-full shadow-md overflow-hidden bg-background">
                                             <Image
