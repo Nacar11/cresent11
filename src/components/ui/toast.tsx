@@ -181,7 +181,7 @@ const ToastContainer = () => {
 
     return (
         <div
-            className="fixed bottom-4 right-4 z-[9999] pointer-events-none w-[420px]"
+            className="fixed bottom-4 right-0 sm:right-4 z-[9999] pointer-events-none w-full max-w-[420px] px-4 sm:px-0"
             style={{ height: containerHeight }}
         >
             <div
@@ -206,7 +206,7 @@ const ToastContainer = () => {
                             key={toast.id}
                             ref={measureRef(toast)}
                             className={clsx(
-                                "absolute right-0 bottom-0 shadow-menu rounded-2xl border border-[#D4AF37] bg-[#112240] text-primary-foreground leading-[21px] p-4 h-fit",
+                                "absolute right-4 sm:right-0 bottom-0 shadow-menu rounded-2xl border border-[#D4AF37] bg-[#112240] text-primary-foreground leading-[21px] p-4 h-fit",
                                 {
                                     message: "",
                                     success: "",
@@ -217,11 +217,11 @@ const ToastContainer = () => {
                                 index < lastVisibleStart && "pointer-events-none"
                             )}
                             style={{
-                                width: 420,
+                                width: 'calc(100% - 2rem)', // Account for px-4 padding on mobile
                                 transition: "all .35s cubic-bezier(.25,.75,.6,.98)",
                                 transform: shownIds.includes(toast.id)
                                     ? getFinalTransform(index, toasts.length)
-                                    : "translate3d(0, 100%, 150px) scale(1)"
+                                    : "translate3d(0, 100%, 150px) scale(1)",
                             }}
                         >
                             <div className="flex flex-col items-center justify-between text-[.875rem]">
