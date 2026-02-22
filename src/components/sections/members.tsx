@@ -29,7 +29,7 @@ const generateTermData = () => {
             ]
         }
         // Base officers for 2025
-        if (year === 2025) {
+        else if (year === 2025) {
             termsData[year] = [
                 { name: "Bro. Brindo Nacario", title: "Worshipful Master", role: "Light of the Lodge" },
                 { name: "Bro. Elizir Lao", title: "Senior Warden", role: "Pillar of Strength" },
