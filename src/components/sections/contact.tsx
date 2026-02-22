@@ -16,7 +16,6 @@ export default function ContactSection() {
         message: ""
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => ({
@@ -50,7 +49,6 @@ export default function ContactSection() {
         }
 
         setIsSubmitting(true)
-        setSubmitStatus("idle")
 
         try {
             const formDataJSON = {
@@ -72,16 +70,13 @@ export default function ContactSection() {
 
             const result = await response.json()
             if (result.success) {
-                setSubmitStatus("success")
                 setFormData({ name: "", email: "", subject: "", message: "" }) // Reset form
                 toasts.success("Thank you. Your message has been securely sent. We will reply shortly.")
             } else {
-                setSubmitStatus("error")
                 console.error("Web3Forms error:", result)
                 toasts.error("We encountered an error sending your message. Please try again or email us directly.")
             }
         } catch (error) {
-            setSubmitStatus("error")
             console.error("Form submission failed:", error)
             toasts.error("Form submission failed due to a network error. Please try again.")
         } finally {
@@ -169,7 +164,7 @@ export default function ContactSection() {
                                 <Clock className="w-6 h-6 text-accent shrink-0 mt-1" />
                                 <div>
                                     <h4 className="font-semibold text-primary uppercase tracking-widest text-sm mb-1">Stated Meetings</h4>
-                                    <p className="text-muted-foreground font-sans">1st and 3rd Thursdays of the Month<br />Gavel sounds at 7:00 PM</p>
+                                    <p className="text-muted-foreground font-sans">Meets every last Friday of the Month</p>
                                 </div>
                             </div>
 
