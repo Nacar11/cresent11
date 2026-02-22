@@ -19,7 +19,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
         {/* Title positioned absolutely at the top */}
-        <div className="absolute left-0 w-full px-4 flex flex-col items-center">
+        <div className="absolute -top-24 md:top-0 xl:-top-10 left-0 w-full px-4 flex flex-col items-center">
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-white tracking-wide drop-shadow-md">
             CRESCENT MASONIC LODGE NO. 419
           </h1>
