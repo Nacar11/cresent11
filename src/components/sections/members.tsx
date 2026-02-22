@@ -27,7 +27,20 @@ const generateTermData = () => {
                 { name: "VW Lock Sestoso", title: "Auditor", role: "Examiner of Accounts" },
                 { name: "VW Rhomel Caudor", title: "Harmony Officer", role: "Keeper of Peace" },
             ]
-        } else {
+        }
+        // Base officers for 2025
+        if (year === 2025) {
+            termsData[year] = [
+                { name: "Bro. Brindo Nacario", title: "Worshipful Master", role: "Light of the Lodge" },
+                { name: "Bro. Elizir Lao", title: "Senior Warden", role: "Pillar of Strength" },
+                { name: "Bro. Paul Pioquinto", title: "Junior Warden", role: "Pillar of Beauty" },
+                { name: `Treasurer Full Name ${year}`, title: "Treasurer", role: "Keeper of Funds" },
+                { name: `Secretary Full Name ${year}`, title: "Secretary", role: "Recorder of Deeds" },
+                { name: `Auditor Full Name ${year}`, title: "Auditor", role: "Examiner of Accounts" },
+                { name: `Harmony Officer Full Name ${year}`, title: "Harmony Officer", role: "Keeper of Peace" },
+            ]
+        }
+        else {
             // Shifted mock names for historical terms maintaining the same titles
             termsData[year] = [
                 { name: `Past Master ${year}`, title: "Worshipful Master", role: "Light of the Lodge" },
